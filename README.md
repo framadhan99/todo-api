@@ -53,9 +53,12 @@ php artisan serve
 ```
 
 List all registered routes.
+
 ```bash
 php artisan route:list
 ```
+
+Enjoy!
 
 ## Built With
 
