@@ -37,7 +37,7 @@ Create database and migrate.
 
 ```bash
 mysql -uroot -p -e "CREATE DATABASE todo"
-php artisan migrate:fresh --seed
+php artisan migrate --seed
 ```
 
 Set the application key.
