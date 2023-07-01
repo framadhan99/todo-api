@@ -62,4 +62,4 @@ Enjoy!
 
 ## Built With
 
-* [Laravel](https://laravel.com/docs/10.x)
+* Laravel
