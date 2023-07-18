@@ -8,3 +8,5 @@ Route::middleware('auth:sanctum')->prefix('v2')->group(function () {
     Route::apiResource('/tasks', TaskController::class);
     Route::patch('/tasks/{task}/complete', CompleteTaskController::class);
 });
+
+// middleware('auth:sanctum')->

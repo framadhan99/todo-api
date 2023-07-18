@@ -18,16 +18,22 @@ class LoginController extends Controller
     public function __invoke(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
+        if ($user != null) {
+            if (!$user || !Hash::check($request->password, $user->password)) {
+                throw ValidationException::withMessages([
+                    'password' => ['Password Salah.']
+                ]);
+            }
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'user' => $user,
+                'token' => $user->createToken('laravel_api_token')->plainTextToken
+            ]);
+        } else {
             throw ValidationException::withMessages([
-                'email' => ['The credentials you entered are incorrect.']
+                'email' => ['Email tidak sesuai silahkan ulangi atau Signup dulu.']
             ]);
         }
 
-        return response()->json([
-            'user' => $user,
-            'token' => $user->createToken('laravel_api_token')->plainTextToken
-        ]);
     }
 }
