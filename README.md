@@ -17,7 +17,7 @@ mysql -V
 Clone this repo.
 
 ```bash
-git clone https://github.com/sc27kr/laravel-todo-backend-api.git
+git clone https://github.com/framadhan99/todo-api
 ```
 
 Copy .env.
